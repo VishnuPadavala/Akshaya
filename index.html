@@ -8,9 +8,11 @@
             height: 100vh;
             background: linear-gradient(to right, #ff758c, #ff7eb3);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
+            overflow: hidden;
         }
 
         h1 {
@@ -24,9 +26,59 @@
             from { text-shadow: 0 0 10px white; }
             to { text-shadow: 0 0 25px white; }
         }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+            position: relative;
+        }
+
+        #yes {
+            background-color: white;
+            color: #ff4b7d;
+        }
+
+        #no {
+            background-color: #ff4b7d;
+            color: white;
+            position: absolute;
+        }
     </style>
 </head>
 <body>
+
     <h1>I Love You Akshaya ❤️</h1>
+
+    <div class="buttons">
+        <button id="yes" onclick="yesClicked()">YES 💖</button>
+        <button id="no" onmouseover="moveButton()">NO 😜</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            var button = document.getElementById("no");
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+
+        function yesClicked() {
+            document.body.innerHTML = `
+                <h1 style="color:white; text-align:center;">
+                    Good girl 💖 Naku Telusu 😘
+                </h1>
+            `;
+        }
+    </script>
+
 </body>
 </html>
