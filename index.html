@@ -17,14 +17,8 @@
 
         h1 {
             color: white;
-            font-size: 50px;
+            font-size: 45px;
             text-align: center;
-            animation: glow 1.5s infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 10px white; }
-            to { text-shadow: 0 0 25px white; }
         }
 
         .buttons {
@@ -32,13 +26,12 @@
         }
 
         button {
-            padding: 10px 25px;
+            padding: 12px 25px;
             font-size: 18px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             margin: 10px;
-            position: relative;
         }
 
         #yes {
@@ -73,9 +66,17 @@
 
         function yesClicked() {
             document.body.innerHTML = `
-                <h1 style="color:white; text-align:center;">
-                    Good girl 💖 Naku Telusu 😘
-                </h1>
+                <div style="
+                    height:100vh;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    background: linear-gradient(to right, #ff758c, #ff7eb3);
+                ">
+                    <h1 style="color:white;">
+                        Good girl 💖 Naku Telusu 😘
+                    </h1>
+                </div>
             `;
         }
     </script>
